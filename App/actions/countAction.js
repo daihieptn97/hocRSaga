@@ -55,9 +55,7 @@ export function connectSocket() {
      };*/
     let clientID = '9d08d428c1964cf6921e4c59e5270fbc';
     let client = null;
-    var domain = 'mqtttest.hunonicpro.com:1883';
-    let ip = domain.split(':')[0];
-    let uri = `ws://${ip}:8080/ws`;
+
 
     // console.log(uri, ip, domain)
     let myStorage = {
