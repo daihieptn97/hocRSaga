@@ -16,8 +16,8 @@ import {
     StatusBar, TouchableOpacity,
 } from 'react-native';
 import {Provider, useStore} from 'react-redux';
-import store from './store';
-import Home from './screen/Home';
+import store from './App/store';
+import Home from './App/screen/Home';
 
 
 export default function App() {

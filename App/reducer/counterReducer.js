@@ -1,4 +1,4 @@
-import {DOWN_COUNT, UP_COUNT} from '../constants';
+import {DOWN_COUNT, UP_COUNT} from '../../constants';
 
 const dataDefault = {
     number: 0,
@@ -10,7 +10,6 @@ const counterReducer = (state = dataDefault, action) => {
     switch (action.type) {
         case UP_COUNT : {
             return {...state, number: state.number + action.val};
-
         }
         case DOWN_COUNT : {
             return {...state, number: state.number - action.val};

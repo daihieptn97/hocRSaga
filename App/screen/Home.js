@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -21,15 +21,26 @@ import {
     useStore,
 } from 'react-redux';
 // import {upCount} from '../actions/countAction';
-import {UP_COUNT} from '../constants';
+import {UP_COUNT} from '../../constants';
+
+import {Client, Message} from 'react-native-paho-mqtt';
+import {connectSocket} from '../actions/countAction';
 
 export default function Home() {
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log('subtopic xinchaovietnam');
+        connectSocket();
+    }, []);
+
     const store = useStore();
-    const dispatch = useDispatch();
+
 
     const number = useSelector(state => state.count.number);
 
-   // console.log(number);
+    // console.log(number);
     //let {number} = store.getState().count;
 
     return (

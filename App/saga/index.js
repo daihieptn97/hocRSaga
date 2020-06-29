@@ -1,12 +1,14 @@
 import {all, fork, takeEvery, takeLatest, put, take, call} from 'redux-saga/effects';
 
-import {countDownSaga} from './actionDemo';
-import {UP_COUNT} from '../constants';
+import {countDownSaga, SagaCM1} from './actionDemo';
+import {UP_COUNT} from '../../constants';
+import {CMD1} from '../actions/countAction';
 
 export function* rootSaga() {
     console.log('hello saga');
     // yield fork(decreaseCounter);
     yield takeLatest(UP_COUNT, countDownSaga);
+    yield takeLatest("CMD1", SagaCM1);
 }
 
 /*
